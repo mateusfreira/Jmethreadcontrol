@@ -1,21 +1,18 @@
-mework de Controle de Fila de execuçÎáÎ÷Îıo de Threads em JavaMe com a finalidade de resolver problemas de multi threads anonimas em execuçÎáÎ÷Îıo no dispositivo,
-	O QueueManager controla uma fila de execuçÎáÎ÷Îıo de objetos e garrante que apenas uma thread estarÎáÎõÎİ em execuçÎáÎ÷Îıo alem da thread principal
-		O QueueObject ÎáÎéÎİ uma inteface que contem os methodos, 
-			   run();
-	                  getStatus();
-   	  	          setStatus(int i);
-			  preRun();
-			  posRun();
-									   	que controlam o tempo de vida da aplicaçÎáÎ÷Îıo
+Framework de Controle de Fila de execs de Threads em JavaMe com a finalidade de resolver problemas de multi threads anonimas em execucao no dispositivo,
+	O QueueManager controla uma fila de exec de objetos e garrante que apenas uma thread estara em execucao alem da thread principal
+		O QueueObject é uma inteface que contem os methodos, 
+			  run();//codigo do metodo
+			  getStatus();//retorna o status do objeto
+   	  	      setStatus(int i);//premite alterar o status do objeto
+			  preRun();//antes de run
+			  posRun();//apos o run
+que controlam o tempo de vida da aplicação
+**Exemplo de Uso**
+---
+QueueManager.getInstance().start();//inicio do projeto
 
-										==Exemplo de Uso==
-										{{{
-										QueueManager.getInstance().start();//inicio do projeto
-										}}}
-										{{{
-										public class HttpReques implements QueueObject
+---
+public class HttpReques implements QueueObject
 
-										}}}
-										{{{
-										QueueManager.getInstance().addObject(new HttpReques(url, listner));//sera processado na fila
-										}}}
+---
+QueueManager.getInstance().addObject(new HttpReques(url, listner));//sera processado na fila
